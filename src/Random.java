@@ -12,25 +12,25 @@ public class Random {
         int myDigit = (int)( Math.random() * 100);
         int trycount = 0;
         String val;
-        int input;
+        int tries = 8, inval;
         System.out.println("Enter your Integer");
-        while (trycount < 8){
+        while (trycount < tries) {
 
             try {
                 val = new Scanner(System.in).next();
-                input = Integer.valueOf(val);
+                inval = Integer.valueOf(val);
             }catch (NumberFormatException t){
-                System.out.println("Not a integer! " + t);
+                System.out.println("Not an integer! " + t);
                 continue;
             }
-            if (input == myDigit){
+            if (inval == myDigit) {
                 System.out.println("You win!");
                 System.exit(0);
             }
-            if (input > myDigit){
+            if (inval > myDigit) {
                 System.out.println("It was less");
             }
-            if(input < myDigit){
+            if (inval < myDigit) {
                 System.out.println("It was greater");
             }
 
